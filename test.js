@@ -1,5 +1,5 @@
 class Cilveks {
-    constructor(age, name, sex){
+    constructor(age = 0, name = "Anna", sex = "v"){
         this.vecums = age;
         this.vards = name;
         this.dzimums = sex;
@@ -34,7 +34,7 @@ class Cilveks {
         } else {
             teksts += this.dzimums
         }
-        console.log(teksts)
+        console.log(teksts);
     }
 }
 
