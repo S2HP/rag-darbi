@@ -26,6 +26,30 @@ def find_day(this_year, this_month, this_day, this_date, bday_day, bday_month, b
         if year % 100 == 0 and year % 400 != 0:
             leapYear = leapYear-1
     
+    daysGoneBy += leapYear
+
+    if this_month>bday_month:
+        full_months = this_month-bday_month
+    else:
+        full_months = this_month+12-bday_month
+
+    if bdayPassed(1, this_date, 1, bday_date) == False:
+        full_months -= 1
+
+    daysinMonth = 0
+
+    for i in range(bday_month, this_month):
+        if i == 13:
+            i=1
+        
+        daysinMonth += daysPerMonth[i]
+
+    daysGoneBy += daysinMonth
+
+    if this_date>=bday_date:
+        daysGoneBy += this_date-bday_date[this_month-1]
+    else:
+        daysGoneBy = this_date + daysinMonth[this_month-1]+bday_month
     return "OK"
 
 def bdayPassed(this_month, this_date, bday_month, bday_date):
