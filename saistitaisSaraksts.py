@@ -68,7 +68,7 @@ class List:
 
         return esosais
 
-     def switch(self, index1, index2):
+    def switch(self, index1, index2):
         kopija_pirmais = self.get(index1)
         kopija_otrais = self.get(index2)
         self.put(kopija_pirmais, index1)
