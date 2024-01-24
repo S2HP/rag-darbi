@@ -1,7 +1,6 @@
 import pandas as pd #Failu apstrāde
 import matplotlib.pyplot as plt #Grafiki
 import seaborn as sb #Vizualizācija
-
 sb.set_style('whitegrid')
 plt.rcParams['figure.figsize']=(15,10) # plot size
 
@@ -14,9 +13,10 @@ def karstuma_karte(datne):
 def datu_biezums(datne, kolonna):
     datu_fails = pd.read_csv(datne)
     sb.distplot(datu_fails[kolonna], color='r')
-    plt.title(kolonna.capitalize() + 'biežums', fontsize = 16)
-    plt.xlabel(kolonna.capitalize(), )
+    plt.title(kolonna.capitalize() + ' biežums', fontsize = 16)
+    plt.xlabel(kolonna.capitalize(), fontsize = 14)
     plt.ylabel("Biežums", fontsize = 14)
+    plt.xticks(fontsize = 12)
     plt.show()
     return
 
