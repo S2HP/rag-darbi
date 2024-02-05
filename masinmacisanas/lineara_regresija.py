@@ -48,4 +48,4 @@ modelis = LinearRegression()
 
 modelis, rezultats = trenet_modeli(modelis, X_train, Y_train, X_test, Y_test)
 
-modela_kvalitate(X_test, Y_test)
+modela_kvalitate(Y_test, rezultats)
