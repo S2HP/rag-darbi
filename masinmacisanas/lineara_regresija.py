@@ -38,7 +38,7 @@ def prognozejam_rezultatu(modelis, dati):
     rezultats = modelis.predict(dati)
     return rezultats
 
-datne1 = "dati/auto_simple.csv"
+datne1 = "masinmacisanas/dati/auto_simple.csv"
 kol_x1 = ["Volume", "Weight"]
 kol_y1 = 'CO2'
 
@@ -46,6 +46,6 @@ X_train, X_test, Y_train, Y_test = sagatavot_datus(datne1, kol_x1, kol_y1)
 
 modelis = LinearRegression()
 
-modelis, rezultats = trenet_modeli(modelis, X_train, Y_train, X_test, Y_test)
+modelis, rezultats = trenet_modeli(modelis, X_train, Y_train, X_test)
 
 modela_kvalitate(Y_test, rezultats)
